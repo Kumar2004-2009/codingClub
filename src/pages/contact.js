@@ -13,7 +13,7 @@ const contact = () => {
     console.log(name,phone,email,msg);
     const data={name,phone,email,msg};
 
-    fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/postcontact`,{
+    fetch(`http://localhost:3000/api/postcontact`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'

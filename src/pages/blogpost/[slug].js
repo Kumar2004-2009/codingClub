@@ -46,9 +46,9 @@ export default function slug(props) {
   </>
 }
 export async function getServerSideProps(context) {
-
+  
   const {slug}=context.query
-  let data=await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/getBlog?slug=${slug}`)
+  let data=await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`)
   let myBlog=await data.json()
   return{
     props:{myBlog},
