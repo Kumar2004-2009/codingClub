@@ -87,9 +87,6 @@ const blog = (props) => {
   );
 };
 export async function getServerSideProps(context) {
-  if(!process.env.NEXT_PUBLIC_BASE_API_URL){
-    return null;
-  }
   let data=await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/blogs`)
   let allBlogs=await data.json()
   return{

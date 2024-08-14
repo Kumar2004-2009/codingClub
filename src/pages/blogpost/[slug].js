@@ -46,9 +46,7 @@ export default function slug(props) {
   </>
 }
 export async function getServerSideProps(context) {
-  if(!process.env.NEXT_PUBLIC_BASE_API_URL){
-    return null;
-  }
+
   const {slug}=context.query
   let data=await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/getBlog?slug=${slug}`)
   let myBlog=await data.json()
