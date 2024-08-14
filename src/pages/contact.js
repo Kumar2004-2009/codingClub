@@ -12,7 +12,10 @@ const contact = () => {
     e.preventDefault();
     console.log(name,phone,email,msg);
     const data={name,phone,email,msg};
-    fetch('https://coding-club-mu.vercel.app/api/postcontact',{
+    if(!process.env.NEXT_PUBLIC_BASE_API_URL){
+      return null;
+    }
+    fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/postcontact`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'

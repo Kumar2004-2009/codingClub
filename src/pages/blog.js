@@ -87,7 +87,10 @@ const blog = (props) => {
   );
 };
 export async function getServerSideProps(context) {
-  let data=await fetch("https://coding-club-mu.vercel.app/api/blogs")
+  if(!process.env.NEXT_PUBLIC_BASE_API_URL){
+    return null;
+  }
+  let data=await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/blogs`)
   let allBlogs=await data.json()
   return{
     props:{allBlogs},
