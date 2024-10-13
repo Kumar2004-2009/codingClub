@@ -1,4 +1,7 @@
 # Blog Project
+
+![image](https://github.com/user-attachments/assets/b0c3a5ba-f95f-4480-8e09-13219f127c3b)
+
 Welcome to my first blog project built with Next.js and styled with Tailwind CSS! This project serves as a learning experience to understand how Next.js works and how to style components effectively using Tailwind.
 
 ## Features
